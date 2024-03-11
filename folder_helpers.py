@@ -2,6 +2,22 @@ import os
 import pickle
 
 def list_full_paths(directory):
+    '''
+    "<Test, Train, Val>": {
+        "COVID-19": {
+            "images": [...],
+            "lung masks": [...]
+        },
+        "Non-COVID": {
+            "images": [...],
+            "lung masks": [...]
+        },
+        "Normal": {
+            "images": [...],
+            "lung masks": [...]
+        }
+    },
+    '''
     paths_dict = {}
     # Recorrer los directorios de nivel superior: Test, Train, Val
     for root_dir in next(os.walk(directory))[1]:
